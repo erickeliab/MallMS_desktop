@@ -1,6 +1,6 @@
 # Inventory Desktop Application
 
-Inventory Desktop application with Electron
+MallMS Desktop application with Electron
 
 ### Purpose
 Final Year Project for a friend
