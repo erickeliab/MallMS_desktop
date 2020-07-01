@@ -12,9 +12,12 @@
   "author": "Brad Traversy",
   "license": "ISC",
   "dependencies": {
-    "electron": "^1.7.6"
+    "electron": "^1.7.6",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.13"
   },
   "devDependencies": {
-    "electron-packager": "^9.0.1"
+    "electron-packager": "^9.0.1",
+    "sequelize-cli": "^5.5.1"
   }
 }

@@ -1,9 +1,6 @@
 
 <!DOCTYPE html>
-<!--
-This is a starter template page. Use this page to start your new project from
-scratch. This page gets rid of all links and provides the needed markup only.
--->
+
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -18,15 +15,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-
+  <link rel="stylesheet" href="custom_style/product.css">
   <link rel="stylesheet" href="custom_style/mmain.css">
   <link rel="stylesheet" href="custom_style/custom.css">
-
+  
   <script src="navbar.js"></script>
 </head>
 <body class="hold-transition sidebar-mini"  >
-<div class="wrapper">
 
+
+<div class="wrapper">
+ 
     
   <!-- /.navbar -->
 
@@ -63,90 +62,67 @@ scratch. This page gets rid of all links and provides the needed markup only.
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-  <h1>Products</h1>
-    <!-- Main content -->
-    <div class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+ 
 
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the card's
-                  content.
-                </p>
+  <body>
 
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-              </div>
-            </div>
+		<div class="container row">
+			<div class="card">
+				<div class="card-header">
+					<img src="./images/rover.jpeg" alt="rover" />
+				</div>
+				<div class="card-body">
+					<span class="tag tag-teal">Technology</span>
+					<h4>Why is the Tesla Cybertruck designed the way it is?</h4>
+					<p>An exploration into the truck's polarising design.</p>
+					<div class="user">
+						<img src="./images/user-1.jpg" alt="user 1" />
+						<div class="user-info">
+							<h5>Carrie Brewer</h5>
+							<small>2h ago</small>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header">
+					<img src="./images/ballons.jpeg" alt="ballons" />
+				</div>
+				<div class="card-body">
+					<span class="tag tag-purple">Popular</span>
+					<h4>How to Keep Going When You Don't Know What's Next</h4>
+					<p>
+						The future can be scary, but there are ways to deal with that fear.
+					</p>
+					<div class="user">
+						<img src="./images/user-2.jpg" alt="user 2" />
+						<div class="user-info">
+							<h5>Jerome Walton</h5>
+							<small>Yesterday</small>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="card">
+				<div class="card-header">
+					<img src="./images/city.jpeg" alt="city" />
+				</div>
+				<div class="card-body">
+					<span class="tag tag-pink">Design</span>
+					<h4>10 Rules of Dashboard Design</h4>
+					<p>Dashboard Design Guidelines</p>
+					<div class="user">
+						<img src="./images/user-3.jpg" alt="user 3" />
+						<div class="user-info">
+							<h5>Lewis Daniels</h5>
+							<small>23 Dec 2019</small>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
 
-            <div class="card card-primary card-outline">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up the bulk of the card's
-                  content.
-                </p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-              </div>
-            </div><!-- /.card -->
-          </div>
-          <!-- /.col-md-6 -->
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="m-0">Featured</h5>
-              </div>
-              <div class="card-body">
-                <h6 class="card-title">Special title treatment</h6>
-
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-
-            <div class="card card-primary card-outline">
-              <div class="card-header">
-                <h5 class="m-0">Featured</h5>
-              </div>
-              <div class="card-body">
-                <h6 class="card-title">Special title treatment</h6>
-
-                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-          </div>
-          <!-- /.col-md-6 -->
-        </div>
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
-
-  <!-- Control Sidebar -->
-  <aside class="control-sidebar control-sidebar-dark">
-    <!-- Control sidebar content goes here -->
-    <div class="p-3">
-      <h5>Title</h5>
-      <p>Sidebar content</p>
-    </div>
-  </aside>
-  <!-- /.control-sidebar -->
-
-  <!-- Main Footer -->
-
-</div>
-<!-- ./wrapper -->
-
-<!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>

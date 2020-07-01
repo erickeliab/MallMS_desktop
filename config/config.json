@@ -1,0 +1,26 @@
+{
+  "development": {
+    "username": "test",
+    "password": "test",
+    "database": "inventory",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  },
+  "test": {
+    "username": "test",
+    "password": "test",
+    "database": "inventory",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  },
+  "production": {
+    "username": "test",
+    "password": "test",
+    "database": "inventory",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  }
+}
