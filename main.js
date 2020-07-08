@@ -31,6 +31,8 @@ app.on('ready', function(){
     protocol: 'file:',
     slashes:true
   }));
+
+  
   // Quit app when closed
   mainWindow.on('closed', function(){
     app.quit();
@@ -83,7 +85,12 @@ function popup(view,method){
 }
 
 
+ipcMain.on('register:user', (event, newUser) => {
+    console.log(newUser) // prints "ping"
 
+    
+    event.returnValue = newUser;
+  })
 
 
 // Catch item:add

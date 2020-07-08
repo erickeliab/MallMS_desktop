@@ -21,8 +21,10 @@
   <link rel="stylesheet" href="custom_style/main.css">
   <link rel="stylesheet" href="custom_style/custom.css">
 </head>
-<body class="hold-transition login-page">
-<div class="login-box">
+<body class="hold-transition login-page" onload="myFunction()" style="margin:0;">
+  <div class="loader" id="loader"></div>
+  
+<div class="login-box" id="myDiv">
   <div class="login-logo">
     <a href="../../index2.html"><b>Inventory</b>App</a>
   </div>
@@ -31,9 +33,9 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg">Register</p>
 
-      <form onsubmit="submitRegistration()">
+      <form name="register" onsubmit="return submitRegistration()">
         <div class="input-group mb-3">
-            <input type="text" class="form-control" name="firstname" placeholder="Firstnama">
+            <input type="text" class="form-control" name="firstname" placeholder="Firstnama" >
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
@@ -41,7 +43,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="text" class="form-control" name="lastname" placeholder="Lastname">
+            <input type="text" class="form-control" name="lastname" placeholder="Lastname" >
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
@@ -50,7 +52,7 @@
           </div>
 
         <div class="input-group mb-3">
-          <input type="email" class="form-control" name="email"  placeholder="Email">
+          <input type="email" class="form-control" name="email"  placeholder="Email" >
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -58,7 +60,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" name="password" placeholder="Password">
+          <input type="password" class="form-control" name="password" placeholder="Password" >
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -66,10 +68,10 @@
           </div>
         </div>
         <div class="input-group mb-3">
-            <input type="password" class="form-control" placeholder="Retype Password">
+            <input type="password" class="form-control" name="password2" placeholder="Retype Password" >
             <div class="input-group-append">
               <div class="input-group-text">
-                <span class="fas fa-lock"></span>
+                <span class="fas fa-lock" id="passfield"></span>
               </div>
             </div>
           </div>
@@ -78,15 +80,15 @@
             <div class="icheck-primary">
               <div class="row">
                 <div class="col-3 ml-2">
-                  <input class="form-check-input" type="radio" name="radio1">
+                  <input class="form-check-input" type="radio" id="admin" name="role">
                   <label class="form-check-label">Admin</label>
                 </div>
                 <div class="col-3 mr-3">
-                  <input class="form-check-input" type="radio" name="radio1" checked>
+                  <input class="form-check-input" type="radio" id="storekeeper" name="role" >
                   <label class="form-check-label">Storekeeper</label>
                 </div>
                 <div class="col-3 ml-2">
-                  <input class="form-check-input" type="radio" name="radio1" checked>
+                  <input class="form-check-input" id="seller" type="radio" name="role" checked>
                   <label class="form-check-label">Seller</label>
                 </div>
               </div>
@@ -113,8 +115,7 @@
       </p>
     </div>
     <!-- /.login-card-body -->
-  </div>
-</div>
+  
 
 
 <!-- <script src="plugins/jquery/jquery.min.js"></script>
@@ -123,5 +124,6 @@
 
 <script src="dist/js/adminlte.min.js"></script> -->
 <script src="controllers/register.js"></script>
+<script src="scripts/custom.js"></script>
 </body>
 </html>
