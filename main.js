@@ -23,7 +23,10 @@ app.on('ready', function(){
 
     width: 1100,
     height:600,
-    title:'Inventory Application'
+    title:'Inventory Application',
+    webPreferences: {
+      nodeIntegration: true
+  }
   });
   // Load html in window
   mainWindow.loadURL(url.format({
@@ -88,6 +91,21 @@ function popup(view,method){
 ipcMain.on('register:user', (event, newUser) => {
     console.log(newUser) // prints "ping"
 
+    if(!newUser){
+      mainWindow.webContents = mainWindow.loadURL(url.format({
+        pathname: path.join(__dirname, 'views/login.html'),
+        protocol: 'file:',
+        slashes:true
+      }));
+      
+    }else {
+      mainWindow.webContents = mainWindow.loadURL(url.format({
+        pathname: path.join(__dirname, 'views/index.html'),
+        protocol: 'file:',
+        slashes:true
+      }));
+      
+    }
     
     event.returnValue = newUser;
   })
@@ -111,7 +129,11 @@ const mainMenuTemplate =  [
         label:'Home',
         
         click(){
-          createAddWindow('home')
+          mainWindow.webContents = mainWindow.loadURL(url.format({
+            pathname: path.join(__dirname, 'views/login.html'),
+            protocol: 'file:',
+            slashes:true
+          }));
         }
       },
       {
