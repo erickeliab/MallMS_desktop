@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
 
     Product.belongsTo(models.Supplier);
     Product.hasOne(models.Inventory);
-    Product.hasOne(models.Category);
+    Product.belongsTo(models.Category);
   };
   return Product;
 };

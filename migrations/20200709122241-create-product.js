@@ -15,13 +15,12 @@ module.exports = {
         type: Sequelize.STRING
       },
       createdAt: {
-        type: Sequelize.STRING
-      },
-      createdAt: {
+        defaultValue: Sequelize.literal('NOW()'),
         allowNull: false,
         type: Sequelize.DATE
       },
       updatedAt: {
+        defaultValue: Sequelize.literal('NOW()'),
         allowNull: false,
         type: Sequelize.DATE
       }
