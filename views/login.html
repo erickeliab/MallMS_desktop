@@ -21,8 +21,9 @@
   <link rel="stylesheet" href="custom_style/main.css">
   <link rel="stylesheet" href="custom_style/custom.css">
 </head>
-<body class="hold-transition login-page">
-<div class="login-box">
+<body class="hold-transition login-page" onload="myFunction()" style="margin:0;">
+  <div class="loader" id="loader"></div>
+  <div class="login-box" id="myDiv">
   <div class="login-logo">
     <a href="../../index2.html"><b>Inventory</b>App</a>
   </div>
@@ -31,9 +32,9 @@
     <div class="card-body login-card-body">
       <p class="login-box-msg">Log In</p>
 
-      <form action="../../index3.html" method="post">
+      <form name="loginform" onsubmit="return submitLogin()">
         <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
+          <input type="text" class="form-control" name="email"  placeholder="Email" >
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-envelope"></span>
@@ -41,7 +42,7 @@
           </div>
         </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" placeholder="Password">
+          <input type="password" class="form-control" name="password" placeholder="Password" >
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -59,7 +60,7 @@
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <a href="dashboard.html" class="btn btn-primary btn-block">Sign In</a>
+            <button class="btn btn-primary btn-block">Sign In</button>
           </div>
           <!-- /.col -->
         </div>
@@ -68,9 +69,6 @@
       
       <!-- /.social-auth-links -->
 
-      <p class="mb-1">
-        <a href="#" class="">I forgot my password</a>
-      </p>
 
       <p class="mb-1">
         <a href="register.html" class="text-primary">Go to Register</a>
@@ -82,12 +80,10 @@
 </div>
 <!-- /.login-box -->
 
-<!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
+
+<script src="controllers/login.js"></script>
+<script src="scripts/custom.js"></script>
+
 
 </body>
 </html>

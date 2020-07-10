@@ -1,5 +1,11 @@
 //const bcrypt = require('bcrypt');
 const { ipcRenderer } = require('electron');
+import User from '../../models/user';
+
+
+const users = await User.findAll();
+console.log(users);
+
 
 const submitRegistration = (e) => {
    
@@ -29,12 +35,16 @@ const submitRegistration = (e) => {
     if ( firstname == "" || lastname == "" || email == "", password == "", password2 == ""){
         alert("You must fill all fields in this form");
         return false;
-    }
+      }
+      var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+      if (! email.match(mailformat)){
+          alert("You must provide a valid mail  i.e test@example.etc");
+          return false;
+      }
     if (password2 != password) {
         alert("Passwords didnot match");
       return false;
     }
-
 //hashind password
 // let hashedPassword = bcrypt.v4(password);
 
@@ -49,7 +59,7 @@ const newUser = {
 
 //redirecting the user
 
-console.log(ipcRenderer.sendSync('register:user', newUser));
+//console.log(ipcRenderer.sendSync('register:user', newUser));
 
 // window.location.replace("http://");
 

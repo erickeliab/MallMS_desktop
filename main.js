@@ -1,7 +1,12 @@
 const electron = require('electron');
 const path = require('path');
 const url = require('url');
+import { User } from "./models/user";
+// import User from '../../models/user';
 
+
+const users = await User.findAll();
+console.log(users);
 // SET ENV
 process.env.NODE_ENV = 'development';
 
