@@ -14,6 +14,7 @@ const {app, BrowserWindow, Menu, ipcMain} = electron;
 
 let mainWindow;
 let addWindow;
+let LoggedInUser = null;
 // const adduser,edituser,deleteuser,viewuser;
 // const addcategories , editcategories , confirmdeletecategories, viewcategories;
 // const addproducts , editproducts , confirmdeleteproducts, viewproducts;
@@ -25,13 +26,13 @@ let addWindow;
 app.on('ready', function(){
   // Create new window
   mainWindow = new BrowserWindow({
-
+    
     width: 1100,
     height:600,
     title:'Inventory Application',
     webPreferences: {
       nodeIntegration: true
-  }
+    }
   });
   // Load html in window
   mainWindow.loadURL(url.format({
@@ -39,7 +40,8 @@ app.on('ready', function(){
     protocol: 'file:',
     slashes:true
   }));
-
+  
+  console.log(LoggedInUser);
   
   // Quit app when closed
   mainWindow.on('closed', function(){
@@ -94,6 +96,31 @@ function popup(view,method){
 
 
 ipcMain.on('register:user', (event, newUser) => {
+    //console.log(newUser) // prints "ping"
+
+    if(!newUser){
+      mainWindow.webContents = mainWindow.loadURL(url.format({
+        pathname: path.join(__dirname, 'views/login.html'),
+        protocol: 'file:',
+        slashes:true
+      }));
+      
+    }else {
+      mainWindow.webContents = mainWindow.loadURL(url.format({
+        pathname: path.join(__dirname, 'views/login.html'),
+        protocol: 'file:',
+        slashes:true
+      }));
+      
+      
+    }
+    
+    event.returnValue = newUser;
+    LoggedInUser = newUser;
+  })
+
+
+  ipcMain.on('user:login', (event, newUser) => {
     console.log(newUser) // prints "ping"
 
     if(!newUser){
@@ -105,7 +132,7 @@ ipcMain.on('register:user', (event, newUser) => {
       
     }else {
       mainWindow.webContents = mainWindow.loadURL(url.format({
-        pathname: path.join(__dirname, 'views/index.html'),
+        pathname: path.join(__dirname, 'views/dashboard.html'),
         protocol: 'file:',
         slashes:true
       }));
@@ -114,7 +141,6 @@ ipcMain.on('register:user', (event, newUser) => {
     
     event.returnValue = newUser;
   })
-
 
 // Catch item:add
 ipcMain.on('item:add', function(e, item){

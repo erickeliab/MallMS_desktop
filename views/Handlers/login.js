@@ -1,7 +1,5 @@
 //const bcrypt = require('bcrypt');
 const { ipcRenderer } = require('electron');
-const path = require('path');
-const bcrypt = require('bcrypt');
 
 const submitLogin = (e) => {
    
@@ -31,21 +29,17 @@ const submitLogin = (e) => {
 const newUser = {
     email,
     password
-   
 }
-const saltRounds = 10;
 
-bcrypt.hash(password, saltRounds, function(err, hash) {
-    // Store hash in your password DB.
-    console.log(hash);
-});
+
+
 
 //redirecting the user
 
 
-//console.log(ipcRenderer.sendSync('register:user', newUser));
+ipcRenderer.sendSync('user:login', newUser);
 
-// window.location.replace("http://");
+
 
 return (false);
 }

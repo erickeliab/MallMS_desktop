@@ -42,6 +42,9 @@ app.use('/api/products',jsonParser, require('./Controller/productsController'));
 app.use('/api/sales',jsonParser, require('./Controller/salesController'));
 app.use('/api/supliers',jsonParser, require('./Controller/supliersController'));
 app.use('/api/orders',jsonParser, require('./Controller/ordersController'));
+app.use('/api/login',jsonParser, require('./Controller/loginController'));
+app.use('/api/register',jsonParser, require('./Controller/registerController'));
+
 
 //console.log(users);
 
