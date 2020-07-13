@@ -59,7 +59,7 @@ const newUser = {
 //console.log(ipcRenderer.sendSync('register:user', newUser));
 
 // window.location.replace("http://");
-
+var taken = false;
 fetch('http://localhost:3000/api/users')
   .then(response => response.json())
   .then(data => {
@@ -67,12 +67,21 @@ fetch('http://localhost:3000/api/users')
       if (user.email == email){
         console.log('Email is already taken'); 
         
-        
+        taken = true;
         alert("Email is already taken");
         return false;
       }
     });
 
+    if(taken == false){
+      postData('http://localhost:3000/api/register', newUser)
+      .then(data => {
+        alert(`Welcome ${data.firstName}, registration successfull. Press OK to proceed to go to Login`);
+        ipcRenderer.sendSync('register:user', newUser);
+      });
+
+    }
+   
     return false;
   }
   );
@@ -82,10 +91,7 @@ fetch('http://localhost:3000/api/users')
 
 
 
-  postData('http://localhost:3000/api/register', newUser)
-    .then(data => {
-      console.log(data); // JSON data parsed by `data.json()` call
-    });
+  
 
 
 async function postData(url = '', data = {}) {

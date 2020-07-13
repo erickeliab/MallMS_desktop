@@ -30,16 +30,72 @@ const newUser = {
     email,
     password
 }
+var taken = false;
+fetch('http://localhost:3000/api/users')
+  .then(response => response.json())
+  .then(data => {
+    data.forEach(user => {
+        
+      if (user.email == email){
+      
+        
+        taken = true;
+        
+      }
+    });
 
+    if(taken == false){       
+        alert("This email is not valid");
+        return false; 
+      }
+
+
+    if(taken == true){
+      postData('http://localhost:3000/api/login', newUser)
+      .then(data => {
+            if (data.password !== password){
+                alert("Password is incorrect");
+                 return false;  
+            }
+
+            if (data.password == password){
+                alert(`Welcome ${data.firstName}, you are now authenticated. Press OK to proceed`);
+                ipcRenderer.sendSync('user:login', newUser);
+                return false;  
+            }
+      });
+      
+    }
+   
+    return false;
+  }
+  );
 
 
 
 //redirecting the user
 
 
-ipcRenderer.sendSync('user:login', newUser);
 
 
+
+async function postData(url = '', data = {}) {
+    // Default options are marked with *
+    const response = await fetch(url, {
+      method: 'POST', // *GET, POST, PUT, DELETE, etc.
+      mode: 'cors', // no-cors, *cors, same-origin
+      cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
+      credentials: 'same-origin', // include, *same-origin, omit
+      headers: {
+        'Content-Type': 'application/json'
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      redirect: 'follow', // manual, *follow, error
+      referrerPolicy: 'no-referrer', // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+      body: JSON.stringify(data) // body data type must match "Content-Type" header
+    });
+    return response.json(); // parses JSON response into native JavaScript objects
+  }
 
 return (false);
 }
