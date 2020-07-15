@@ -151,52 +151,88 @@ const submitSale = (e) => {
   var product = document.forms["sale"]["product"].value;
   var quantity = document.forms["sale"]["quantity"].value;
 
+    var valid = true;
+   //check if the items are available  
+   fetch(`http://localhost:3000/api/inventories`)
+   .then(response => response.json())
+   .then(da => {
 
-  //fetch
-  fetch(`http://localhost:3000/api/products/${product}`)
-  .then(response => response.json())
-  .then(data => {
-    // consol/e.log({data,quantity});
+      da.forEach(d => {
+          if (d.ProductId == product){
+            var qty = 0;
+            catData.forEach(cd => {
 
-    
-      
-      var tr = document.createElement('tr');
-      var item = document.createElement('td');
-      var price = document.createElement('td');
-      var qtt = document.createElement('td');
+              if (cd.data.id == product){
 
-      
-      // set value property of opt
-      item.appendChild( document.createTextNode(data.name));
-      price.appendChild( document.createTextNode(data.price));
-      qtt.appendChild( document.createTextNode(quantity));
-      
-      tr.appendChild(item);
-      tr.appendChild(price);
-      tr.appendChild(qtt);
+                  qty += cd.quantity
+              }
 
-     
-      // add opt to end of select box (sel)
-      cat.appendChild(tr); 
-      catData.push({data,quantity});
-     
-      if (!catData.length == 0){
-        
-        catData.forEach(singleitem => {
-          let temp = Number(singleitem.data.price) * Number(singleitem.quantity);
-          totalprice += temp;
-        })
-        ttl.innerHTML = "";
-        ttl.append( document.createTextNode(totalprice));
+            });
 
-      }
+              if (Number(d.quantity) < (Number(quantity) + Number(qty))){
+                  valid = false;
+                  alert(`The stock cant afford your request, remained ${d.quantity} items`);
+                  return false;
+              }
+
+              if (Number(d.quantity) >= Number(quantity)){
+               
+                
+                 //fetch
+            fetch(`http://localhost:3000/api/products/${product}`)
+            .then(response => response.json())
+            .then(data => {
+              // console.log({data,quantity});
+
+              
+                
+                var tr = document.createElement('tr');
+                var item = document.createElement('td');
+                var price = document.createElement('td');
+                var qtt = document.createElement('td');
+
+                
+                // set value property of opt
+                item.appendChild( document.createTextNode(data.name));
+                price.appendChild( document.createTextNode(data.price));
+                qtt.appendChild( document.createTextNode(quantity));
+                
+                tr.appendChild(item);
+                tr.appendChild(price);
+                tr.appendChild(qtt);
+
+              
+                // add opt to end of select box (sel)
+                cat.appendChild(tr); 
+                catData.push({data,quantity});
+              
+                if (!catData.length == 0){
+                  
+                  catData.forEach(singleitem => {
+                    let temp = Number(singleitem.data.price) * Number(singleitem.quantity);
+                    totalprice += temp;
+                  })
+                  ttl.innerHTML = "";
+                  ttl.append( document.createTextNode(totalprice));
+
+                }
         
 
       // console.log(catData);
       
   })
+                return false;
+            }
+          }
+      });
+   })
+
+   if(valid == true){
+
+   
+ 
   
-    
+} 
 
 
 
