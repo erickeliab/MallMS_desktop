@@ -30,6 +30,15 @@ const newUser = {
     email,
     password
 }
+
+                  fetch('http://localhost:3000/api/login/getsession')
+                  .then(response => response.json())
+                  .then(data => {
+                        console.log(data);
+                        
+                    })
+
+
 var taken = false;
 fetch('http://localhost:3000/api/users')
   .then(response => response.json())
@@ -60,7 +69,15 @@ fetch('http://localhost:3000/api/users')
 
             if (data.password == password){
                 alert(`Welcome ${data.firstName}, you are now authenticated. Press OK to proceed`);
-                ipcRenderer.sendSync('user:login', newUser);
+                
+                
+                //setting session
+                postData('http://localhost:3000/api/login/setsession', newUser)
+                .then(data => {
+                  
+                  ipcRenderer.sendSync('user:login', newUser);
+                  
+                });
                 return false;  
             }
       });

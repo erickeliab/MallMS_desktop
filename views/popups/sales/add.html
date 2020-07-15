@@ -21,68 +21,93 @@
   <link rel="stylesheet" href="custom_style/main.css">
   <link rel="stylesheet" href="custom_style/custom.css">
 </head>
-<body class="mb-0">
+<body class="mb-0 container">
 <div class="mb-0">
  
-  <!-- /.login-logo -->
-  <div class=" bg-default">
-    <div class="card-body login-card-body bg-default">
-      <h4 class="login-box-msg">New Sales Record</h4>
+  <div class="card card-default mt-2">
+    <div class="card-header">
+      <h3 class="card-title">Sell</h3>
 
-      <form action="../../index3.html" method="post">
-        <div class="input-group mb-3">
-            <input type="email" class="form-control" placeholder="Product">
-            <div class="input-group-append">
-              <div class="input-group-text">
-                
-              </div>
-            </div>
-          </div>
-          <div class="input-group mb-3">
-            <input type="email" class="form-control" placeholder="Firstname">
-            <div class="input-group-append">
-              <div class="input-group-text">
-              </div>
-            </div>
-          </div>
-
-        <div class="input-group mb-3">
-          <input type="email" class="form-control" placeholder="Email">
-          <div class="input-group-append">
-            <div class="input-group-text">
-            </div>
-          </div>
-        </div>
-
-        <div class="input-group mb-3">
-          <h4></h4> 
-          <div class="input-group-append">
-            <div class="input-group-text">
-            </div>
-          </div>
-        </div>
-       
-       
-        <div class="row">
-          <div class="col-8">
-            <div class="icheck-primary">
+      <div class="card-tools">
+         </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+      <form name="sale" onsubmit="return submitSale()">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Product</label>
+            <select class="form-control select2" id="productOptions" name="product" style="width: 100%;">
+              <option  disabled>None</option>
               
-            </div>
+            </select>
           </div>
-          <!-- /.col -->
-          <div class="col-4">
-            <a href="dashboard.html" class="btn btn-default btn-block">Add</a>
+
+          <div class="form-group">
+            <label>Amount</label>
+            <select class="form-control select2" id="quantityOptions" name="quantity" style="width: 100%;">
+              
+            </select>
           </div>
-          <!-- /.col -->
+         
         </div>
-      </form>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+      <div class="col-4">
+        <button type="submit" class="btn btn-warning btn-block">Add to Cart</button>
+      </div>
+    </form>
+    </div>
 
-  
+  </div>
+  <!-- /.card -->
 
+</div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card bg-default">
+      <div class="card-header bg-default">
+        <h2 class="card-title">Cart</h2>
+
+        <span class="float-right"><H1 class="card-title mr-1"> <button class="btn btn-default" onclick="return clearCart()">Clear Cart</button></H1> </span>
+      </div>
+      <!-- /.card-header --> 
+      <div class="card-body table-responsive p-0">
+        <table class="table table-hover text-nowrap">
+          <thead>
+            <tr>
+              
+              <th>Item</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              
+            </tr>
+          </thead>
+          <tbody id="cartTable">
+            
+           
+          </tbody>
+        </table>
+      </div>
+      <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+  </div>
+</div>
+<div class="row">
+  <div class="col-8">
+    <div class="icheck-primary">
       
     </div>
-  
   </div>
+  <!-- /.col -->
+  <div class="col-4">
+    <button id="pressOrder" onclick="return pressOrder()" class="btn btn-primary btn-block">Press Order</button>
+  </div>
+  <!-- /.col -->
 </div>
 <!-- /.login-box -->
 
@@ -92,6 +117,7 @@
 <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="../../dist/js/adminlte.min.js"></script>
+<script src="../../Handlers/sales.js"></script>
 
 </body>
 </html>

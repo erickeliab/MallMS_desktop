@@ -42,16 +42,19 @@ router.delete('/:id', (req,res) => {
 
 //update
 router.put('/:id', (req,res) => {
+
     model.Inventory.findByPk(req.params.id)
     .then((item) => {
       // Check if record exists in db
       if (item) {
         item.update({
-            Quantity: req.body.Quantity ? req.body.Quantity : item.Quantity,
+            quantity: req.body.quantity ? req.body.quantity : item.quantity,
             TotalPrice: req.body.TotalPrice ? req.body.TotalPrice : item.TotalPrice,
         })
         .then(() => res.send(item))
       }
     })
+
+    
 })
 module.exports = router;
