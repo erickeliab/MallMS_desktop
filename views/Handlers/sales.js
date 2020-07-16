@@ -29,8 +29,17 @@ window.onload = (e) => {
      
     });
 
+    fetch('http://localhost:3000/api/inventories')
+  .then(response => response.json())
+  .then(invt => {
+    var temp = 0;
+    invt.forEach(inv => {
+      if (inv.quantity > temp)
+      temp = inv.quantity;
 
-    for (let prod = 1; prod <= data.length; prod++) {
+    });
+
+    for (let prod = 1; prod <= temp; prod++) {
       
       
       var opti = document.createElement('option');
@@ -43,6 +52,10 @@ window.onload = (e) => {
       // add opt to end of select box (sel)
       qtsel.appendChild(opti); 
     }
+
+  });
+
+
 
     return false;
   })

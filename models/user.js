@@ -5,11 +5,11 @@ module.exports = (sequelize, DataTypes) => {
     lastName: DataTypes.STRING,
     email: DataTypes.STRING,
     password: DataTypes.STRING,
-    phone: DataTypes.STRING
+    phone: DataTypes.STRING,
+    type: DataTypes.STRING
   }, {});
   User.associate = function(models) {
-    // associations can be defined here
-    User.belongsTo(models.Roles);
+
 
   };
   return User;

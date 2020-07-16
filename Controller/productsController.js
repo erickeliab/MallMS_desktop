@@ -6,7 +6,7 @@ const Category = require('../models/category');
 
 
 router.get('/', (req,res) => {
-    model.Product.findAll()
+    model.Product.findAll({include: [model.Supplier, model.Category] })
     .then(data => res.send(data))
     .catch(err => console.log(err));
 })

@@ -13,9 +13,9 @@ const submitRegistration = (e) => {
     var phone = document.forms["register"]["phone"].value;
     var password = document.forms["register"]["password"].value;
     var password2 = document.forms["register"]["password2"].value;
-    getCheckedRadio();
+    
     var role;
-   
+    getCheckedRadio();
 //getting data from radio buttons
     function getCheckedRadio() {
               var radioButtons = document.getElementsByName("role");
@@ -51,7 +51,8 @@ const newUser = {
     lastName,
     email,
     password,
-    phone
+    phone,
+    type : role
     
 }
 //redirecting the user

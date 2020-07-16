@@ -8,7 +8,7 @@ module.exports = {
       email: 'steve@gmail.com',
       password: '123',
       phone: '0768767890',
-      RoleID: 1
+      type : 'Owner'
     },
     {
       firstName: "StoneCold",
@@ -16,7 +16,7 @@ module.exports = {
       email: "stonecold@gmail.com",
       password: null,
       phone: '0768767890',
-      RoleID: 3
+      type : 'Seller'
   },
   {
       firstName: "erick",
@@ -24,7 +24,7 @@ module.exports = {
       email: "erickemmanuel661@gmail.com",
       password: "133",
       phone: "0754385888",
-      RoleID: 2
+      type : 'Seller'
   }]);
   },
 

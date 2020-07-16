@@ -22,15 +22,18 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="custom_style/mmain.css">
   <link rel="stylesheet" href="custom_style/custom.css">
 
-  <script src="navbar.js"></script>
+
 </head>
 <body class="hold-transition sidebar-mini"  >
-  <aside class="main-sidebar navnav sidebar-dark-primary elevation-4" id="navnav">
-       
-  </aside>
+  <div class="wrapper">
+
+    <aside class="main-sidebar navnav sidebar-dark-primary elevation-4" id="navnav">
+     
+    </aside>
   <div class="content-wrapper">
    
-
+   
+    
     
       <!-- /.navbar -->
     
@@ -58,52 +61,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
   
               <div class="card-tools bg-default">
                 <div class="input-group input-group-sm" style="width: 150px;">
-                  <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
-  
-                  <div class="input-group-append">
-                    <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
-                  </div>
+                  
                 </div>
               </div>
             </div>
             <!-- /.card-header -->
             <div class="card-body table-responsive p-0">
               <table class="table table-hover text-nowrap">
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Time</th>
-                    <th>Category</th>
-                    <th>Action</th>
+                
+                  <thead>
+                    <tr>
+                      <th></th>
+                      <th>OrderNumber</th>
+                      <th>No Products</th>
+                      <th>Total Amount</th>
+                      <th>Date</th>
+                    </tr>
+                  </thead>
+                  <tbody id="orders">
                     
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>183</td>
-                    <td>Annual</td>
-                    <td>Products</td>
-                    <td><span class="tag tag-success">Extract</span></td>
-                  </tr>
-                  <tr>
-                    <td>219</td>
-                    <td>Weekly</td>
-                    <td>Sales</td>
-                    <td><span class="tag tag-warning btn-small">Extract</span></td>
-                  </tr>
-                  <tr>
-                    <td>657</td>
-                    <td>Monthly</td>
-                    <td>Sales</td>
-                    <td><span class="tag tag-success">Extract</span></td>
-                  </tr>
-                  <tr>
-                    <td>175</td>
-                    <td>Weekly</td>
-                    <td>Products</td>
-                    <td><span class="tag tag-success">Extract</span></td>
-                  </tr>
-                </tbody>
+                   
+                  </tbody>
               </table>
             </div>
             <!-- /.card-body -->
@@ -123,6 +101,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <!-- Bootstrap 4 -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
+<script src="navbar.js"></script>
 </body>
 </html>

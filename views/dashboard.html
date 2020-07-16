@@ -22,7 +22,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="custom_style/mmain.css">
   <link rel="stylesheet" href="custom_style/custom.css">
 
-  <script src="navbar.js"></script>
+  
 </head>
 <body class="hold-transition sidebar-mini"  >
  
@@ -58,10 +58,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   
               <div class="card-tools bg-default">
                 <div class="input-group input-group-sm" style="width: 150px;">
-                  <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
   
                   <div class="input-group-append">
-                    <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
                   </div>
                 </div>
               </div>
@@ -71,38 +69,56 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <table class="table table-hover text-nowrap">
                 <thead>
                   <tr>
-                    <th>ID</th>
-                    <th>User</th>
+                    <th></th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>OrderNumber</th>
                     <th>Date</th>
-                    <th>Status</th>
-                    
                   </tr>
                 </thead>
-                <tbody>
+                <tbody id="recentsales">
+                  
+                 
+                </tbody>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+
+
+
+      <div class="row">
+        <div class="col-12">
+          <div class="card bg-default">
+            <div class="card-header bg-default">
+              <h3 class="card-title"> Recent Orders</h3>
+  
+              <div class="card-tools bg-default">
+                <div class="input-group input-group-sm" style="width: 150px;">
+  
+                  <div class="input-group-append">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0">
+              <table class="table table-hover text-nowrap">
+                <thead>
                   <tr>
-                    <td>183</td>
-                    <td>John Doe</td>
-                    <td>11-7-2014</td>
-                    <td><span class="tag tag-success">Approved</span></td>
+                    <th></th>
+                    <th>OrderNumber</th>
+                    <th>No Products</th>
+                    <th>Total Amount</th>
+                    <th>Date</th>
                   </tr>
-                  <tr>
-                    <td>219</td>
-                    <td>Alexander Pierce</td>
-                    <td>11-7-2014</td>
-                    <td><span class="tag tag-warning">Pending</span></td>
-                  </tr>
-                  <tr>
-                    <td>657</td>
-                    <td>Bob Doe</td>
-                    <td>11-7-2014</td>
-                    <td><span class="tag tag-primary">Approved</span></td>
-                  </tr>
-                  <tr>
-                    <td>175</td>
-                    <td>Mike Doe</td>
-                    <td>11-7-2014</td>
-                    <td><span class="tag tag-danger">Denied</span></td>
-                  </tr>
+                </thead>
+                <tbody id="recentorders">
+                  
+                 
                 </tbody>
               </table>
             </div>
@@ -117,14 +133,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <div class="col-12">
           <div class="card bg-default">
             <div class="card-header bg-default">
-              <h3 class="card-title"> Recent Messages</h3>
+              <h3 class="card-title"> Recently Added Products</h3>
   
               <div class="card-tools bg-default">
                 <div class="input-group input-group-sm" style="width: 150px;">
-                  <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
   
                   <div class="input-group-append">
-                    <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
                   </div>
                 </div>
               </div>
@@ -134,38 +148,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
               <table class="table table-hover text-nowrap">
                 <thead>
                   <tr>
-                    <th>ID</th>
-                    <th>User</th>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Supplier</th>
                     <th>Date</th>
-                    <th>Status</th>
-                    
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td>183</td>
-                    <td>John Doe</td>
-                    <td>11-7-2014</td>
-                    <td><span class="tag tag-success">Approved</span></td>
-                  </tr>
-                  <tr>
-                    <td>219</td>
-                    <td>Alexander Pierce</td>
-                    <td>11-7-2014</td>
-                    <td><span class="tag tag-warning">Pending</span></td>
-                  </tr>
-                  <tr>
-                    <td>657</td>
-                    <td>Bob Doe</td>
-                    <td>11-7-2014</td>
-                    <td><span class="tag tag-primary">Approved</span></td>
-                  </tr>
-                  <tr>
-                    <td>175</td>
-                    <td>Mike Doe</td>
-                    <td>11-7-2014</td>
-                    <td><span class="tag tag-danger">Denied</span></td>
-                  </tr>
+                <tbody id="recentproducts">
+                 
+                 
                 </tbody>
               </table>
             </div>
@@ -193,5 +186,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
+
+<script src="Handlers/viewdashboard.js"></script>
+
+<script src="navbar.js"></script>
 </body>
 </html>

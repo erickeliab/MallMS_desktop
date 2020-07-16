@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const model = require('../models/index');
+const Product = require('../models/product');
 
 
 router.get('/', (req,res) => {
-    model.Sales.findAll()
+    model.Sales.findAll({ include: [model.Product, model.Order] })
     .then(data => res.send(data))
     .catch(err => console.log(err));
 })

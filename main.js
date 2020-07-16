@@ -74,13 +74,20 @@ function createAddWindow(title){
   });
 }
 
+function register() {
+  mainWindow.loadURL(url.format({
+    pathname: path.join(__dirname, 'views/register.html'),
+    protocol: 'file:',
+    slashes:true
+  }));
+}
 
 
 // Handle add item window
 function popup(view,method){
   addWindow = new BrowserWindow({
     width: 600,
-    height:400,
+    height:550,
     title: view + '-' + method
   });
   addWindow.loadURL(url.format({
@@ -193,7 +200,7 @@ const mainMenuTemplate =  [
 // const views = ['product','category','order','sales','user','message'];
 
   {
-    label: 'Add',
+    label: 'New',
     submenu:[
       {
         label:'product',
@@ -201,23 +208,11 @@ const mainMenuTemplate =  [
         click(){
           popup('product','add');
         }
-      },
+      }
+      ,
+      
       {
-        label:'category',
-        
-        click(){
-          popup('category','add');
-        }
-      },
-      {
-        label:'order',
-        
-        click(){
-          popup('order','add');
-        }
-      },
-      {
-        label:'sales',
+        label:'sale',
         
         click(){
           popup('sales','add');
@@ -227,7 +222,7 @@ const mainMenuTemplate =  [
         label:'user',
         
         click(){
-          popup('user','add');
+          register();
         }
       },
     ]

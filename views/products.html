@@ -1,6 +1,9 @@
 
 <!DOCTYPE html>
-
+<!--
+This is a starter template page. Use this page to start your new project from
+scratch. This page gets rid of all links and provides the needed markup only.
+-->
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -15,114 +18,91 @@
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-  <link rel="stylesheet" href="custom_style/product.css">
+
   <link rel="stylesheet" href="custom_style/mmain.css">
   <link rel="stylesheet" href="custom_style/custom.css">
+
   
-  <script src="navbar.js"></script>
 </head>
 <body class="hold-transition sidebar-mini"  >
-
-
-<div class="wrapper">
  
-    
-  <!-- /.navbar -->
+<div class="wrapper">
 
-  <!-- Main Sidebar Container -->
-  <!-- this sidebar is loading the links to different pages -->
   <aside class="main-sidebar navnav sidebar-dark-primary elevation-4" id="navnav">
    
   </aside>
 
-  <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <div class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1 class="m-0 text-dark"></h1>
-          </div><!-- /.col -->
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item">
-                   <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                <div class="image">
-                  <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-                </div>
-                <div class="info">
-                  <a href="#" class="d-block">Steve Aminiel</a>
-                </div>
-              </div></li>
-              
-            </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.container-fluid -->
-    </div>
-    <!-- /.content-header -->
+
+
+
  
+  <div class="content-wrapper">
 
-  <body>
+    <div class="bg-default col-12">
+      <div class="card-header">
+        <h2 class="card-title m-0">Products</h2>
+      </div>
+      <div class="card-body">
+        <h6 class="card-title"></h6>
+       <div class="form-group">
+        <input type="text" name="" id="" class="form-control col-12 rounded-3">
+        
+       </div>
+      </div>
 
-		<div class="container row">
-			<div class="card">
-				<div class="card-header">
-					<img src="./images/rover.jpeg" alt="rover" />
-				</div>
-				<div class="card-body">
-					<span class="tag tag-teal">Technology</span>
-					<h4>Why is the Tesla Cybertruck designed the way it is?</h4>
-					<p>An exploration into the truck's polarising design.</p>
-					<div class="user">
-						<img src="./images/user-1.jpg" alt="user 1" />
-						<div class="user-info">
-							<h5>Carrie Brewer</h5>
-							<small>2h ago</small>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-header">
-					<img src="./images/ballons.jpeg" alt="ballons" />
-				</div>
-				<div class="card-body">
-					<span class="tag tag-purple">Popular</span>
-					<h4>How to Keep Going When You Don't Know What's Next</h4>
-					<p>
-						The future can be scary, but there are ways to deal with that fear.
-					</p>
-					<div class="user">
-						<img src="./images/user-2.jpg" alt="user 2" />
-						<div class="user-info">
-							<h5>Jerome Walton</h5>
-							<small>Yesterday</small>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="card">
-				<div class="card-header">
-					<img src="./images/city.jpeg" alt="city" />
-				</div>
-				<div class="card-body">
-					<span class="tag tag-pink">Design</span>
-					<h4>10 Rules of Dashboard Design</h4>
-					<p>Dashboard Design Guidelines</p>
-					<div class="user">
-						<img src="./images/user-3.jpg" alt="user 3" />
-						<div class="user-info">
-							<h5>Lewis Daniels</h5>
-							<small>23 Dec 2019</small>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</body>
+      
 
+
+      <div class="row">
+        <div class="col-12">
+          <div class="card bg-default">
+            <div class="card-header bg-default">
+              <h3 class="card-title"> Products</h3>
+  
+              <div class="card-tools bg-default">
+                <div class="input-group input-group-sm" style="width: 150px;">
+  
+                  <div class="input-group-append">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body table-responsive p-0">
+              <table class="table table-hover text-nowrap">
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Supplier</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody id="products">
+                 
+                 
+                </tbody>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+      </div>
+    </div>
+    
+  </div>
+    
+  </div>
+
+</div>
+
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
 
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
@@ -130,5 +110,9 @@
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
+
+<script src="Handlers/viewdashboard.js"></script>
+
+<script src="navbar.js"></script>
 </body>
 </html>
