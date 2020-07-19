@@ -1,6 +1,7 @@
 const electron = require('electron');
 const path = require('path');
 const url = require('url');
+
 // import { User } from "./models/user";
 // import User from '../../models/user';
 
@@ -25,6 +26,7 @@ let LoggedInUser = null;
 // Listen for app to be ready
 app.on('ready', function(){
   // Create new window
+
   mainWindow = new BrowserWindow({
     
     width: 1100,
@@ -34,6 +36,12 @@ app.on('ready', function(){
       nodeIntegration: true
     }
   });
+  require('./index');
+
+  if (! require('./index')){
+
+  }
+  
   // Load html in window
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, 'views/index.html'),
@@ -412,3 +420,4 @@ if(process.env.NODE_ENV !== 'production'){
     ]
   });
 }
+

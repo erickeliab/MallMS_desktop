@@ -80,7 +80,8 @@ fetch('http://localhost:3000/api/users')
                 });
                 return false;  
             }
-      });
+      })
+      .catch(err => console.log(err))
       
     }
    

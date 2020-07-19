@@ -33,16 +33,22 @@ const Nav = () => {
     //selecting element aside from the DOM
     const navbarHolder =  document.getElementById('navnav');
 
+    //fetching the logged in user info
+    fetch('http://localhost:3000/api/login/getsession')
+    .then(response => response.json())
+    .then(loggedInUser => {
 
+      if (loggedInUser.type == 'Owner'){
+          console.log('Owner');
+          
 
-    //creating actual navbar (html)
-
-    //edit this nav by adding links and items
-    const navbar = `
+          const navbar = `
     <!-- Brand Logo -->
     <a href="index.html" class="brand-link">
       
-      <span class="brand-text font-weight-light">InventoryApp</span>
+      <span class="brand-text font-weight-light">InventoryApp</span><br/>
+      <small class="brand-text font-weight-light">${loggedInUser.firstName}, ${loggedInUser.type}</small>
+
     </a>
 
     <!-- Sidebar -->
@@ -127,8 +133,209 @@ const Nav = () => {
     <!-- /.sidebar -->
     `;
 
-
     navbarHolder.insertAdjacentHTML( 'beforeend', navbar );
+      }
+
+      if (loggedInUser.type == 'Seller'){
+        console.log('Seller');
+
+
+
+
+
+        const navbar = `
+        <!-- Brand Logo -->
+        <a href="index.html" class="brand-link">
+          
+          <span class="brand-text font-weight-light">InventoryApp</span> <br/>
+          <small class="brand-text font-weight-light">${loggedInUser.firstName}, ${loggedInUser.type}</small>
+
+        </a>
+    
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <!-- Sidebar user panel (optional) -->
+         
+    
+          <!-- Sidebar Menu -->
+          <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+              <!-- Add icons to the links using the .nav-icon class
+                   with font-awesome or any other icon font library -->
+              <li class="nav-item has-treeview menu-open">
+                <a href="dashboard.html" class="nav-link">
+                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <p>
+                    Dashboard
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="products.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Product</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="orders.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Orders</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="users.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Users</p>
+                    </a>
+                  </li>
+                 
+                  <li class="nav-item">
+                    <a href="sales.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Sales</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="categories.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Categories</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="reports.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Report</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="login.html" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>
+                    Log Out
+                    
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item mb-5">
+                <p>.</p> 
+            </li>
+            <li class="nav-item mb-5">
+                <p>.</p> 
+            </li>
+            <li class="nav-item mb-5">
+           <p>.</p></li>
+            </ul>
+          </nav>
+          <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+        `;
+    
+        navbarHolder.insertAdjacentHTML( 'beforeend', navbar );
+      }
+
+      if (loggedInUser.type == 'Storekeeper'){
+        console.log('Storekeeper');
+
+
+
+        const navbar = `
+        <!-- Brand Logo -->
+        <a href="index.html" class="brand-link">
+          
+          <span class="brand-text font-weight-light">InventoryApp</span> <br/>
+          <small class="brand-text font-weight-light">${loggedInUser.firstName}, ${loggedInUser.type}</small>
+          
+        </a>
+    
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <!-- Sidebar user panel (optional) -->
+         
+    
+          <!-- Sidebar Menu -->
+          <nav class="mt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+              <!-- Add icons to the links using the .nav-icon class
+                   with font-awesome or any other icon font library -->
+              <li class="nav-item has-treeview menu-open">
+                <a href="dashboard.html" class="nav-link">
+                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <p>
+                    Dashboard
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="products.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Product</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="orders.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Orders</p>
+                    </a>
+                  </li>
+                
+                 
+                  <li class="nav-item">
+                    <a href="sales.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Sales</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="categories.html" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Categories</p>
+                    </a>
+                  </li>
+                 
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="login.html" class="nav-link">
+                  <i class="nav-icon fas fa-th"></i>
+                  <p>
+                    Log Out
+                    
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item mb-5">
+                <p>.</p> 
+            </li>
+            <li class="nav-item mb-5">
+                <p>.</p> 
+            </li>
+            <li class="nav-item mb-5">
+           <p>.</p></li>
+            </ul>
+          </nav>
+          <!-- /.sidebar-menu -->
+        </div>
+        <!-- /.sidebar -->
+        `;
+    
+        navbarHolder.insertAdjacentHTML( 'beforeend', navbar );
+      }
+
+    });
+
+
+    //creating actual navbar (html)
+
+    //edit this nav by adding links and items
+    
+
+
+  //  navbarHolder.insertAdjacentHTML( 'beforeend', navbar );
 
     
 }
