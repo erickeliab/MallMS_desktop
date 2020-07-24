@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Inventory App</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+  <link rel="stylesheet" href="custom_style/mmain.css">
+  <link rel="stylesheet" href="custom_style/custom.css">
+  <!-- <script src="navbar.js"></script> -->
+</head>
+<body class="hold-transition sidebar-mini"  >
+ 
+  <div class="wrapper">
+  
+    <!-- <aside class="main-sidebar navnav sidebar-dark-primary elevation-4" id="navnav">
+     
+    </aside> -->
+  
+  
+  
+  
+  <div class="">
+    <div class="card-header bg-light">
+        <a href="dashboard.html" class="card-title text-dark mr-4">Back to Dashboard</a> 
+      
+        <a href="products.html" class="card-title text-dark ml-4  mr-4">View Poducts</a>
+       
+  <br>
+       
+      </div>
+  <div class="card card-default mt-4 col-8 ml-4">
+  
+    <!-- /.card-header -->
+    <div class="p-4 bg-light">
+        <div class="card-body p-4 login-card-body bg-default">
+          <h4 class="login-box-msg">Add Product</h4>
+    
+          <form name="addproduct" class="container" onsubmit="return submitProduct()">
+            <div class="input-group mb-3">
+                <input type="text" name="name" class="form-control" placeholder="Product Name">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <input type="text" name="price" class="form-control" placeholder="Price">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                  </div>
+                </div>
+              </div>
+    
+              <div class="input-group mb-3">
+                <input type="text" name="category" class="form-control" placeholder="Category">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                  </div>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <input type="text" name="supplier" class="form-control" placeholder="Supplier">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                  </div>
+                </div>
+              </div>
+              <div class="input-group mb-3">
+                <input type="text" name="quantity" class="form-control" placeholder="Quantity">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                  </div>
+                </div>
+              </div>
+            <div class="input-group mb-3">
+              <textarea type="text" name="description" class="form-control" >Description</textarea>
+              <div class="input-group-append">
+                <div class="input-group-text">
+                </div>
+              </div>
+            </div>
+    
+            <div class="input-group mb-3">
+              <h4></h4> 
+              <div class="input-group-append">
+                <div class="input-group-text">
+                </div>
+              </div>
+            </div>
+           
+           
+            <div class="row">
+              <div class="col-8">
+                <div class="icheck-primary">
+                  
+                </div>
+              </div>
+              <!-- /.col -->
+              <div class="col-4">
+                <button type="submit" class="btn btn-default btn-block">Add</button>
+              </div>
+              <!-- /.col -->
+            </div>
+          </form>
+    
+      
+    
+          
+        </div>
+      
+      </div>
+<!-- jQuery -->
+<script src="plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+
+<script src="Handlers/products.js"></script>
+
+
+
+</body>
+</html>

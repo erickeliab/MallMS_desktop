@@ -36,11 +36,11 @@ app.on('ready', function(){
       nodeIntegration: true
     }
   });
-  require('./index');
+   require('./index');
 
-  if (! require('./index')){
+  // if (! require('./index')){
 
-  }
+  // }
   
   // Load html in window
   mainWindow.loadURL(url.format({
@@ -165,6 +165,17 @@ ipcMain.on('item:add', function(e, item){
   //addWindow = null;
 });
 
+
+
+ipcMain.on('product:created', function(e, item){
+  console.log("product created");
+  
+  mainWindow.webContents.send('product:created', item);
+  //addWindow.close(); 
+  // Still have a reference to addWindow in memory. Need to reclaim memory (Grabage collection)
+  //addWindow = null;
+});
+
 // Create menu template
 const mainMenuTemplate =  [
   // Each object is a dropdown
@@ -176,21 +187,15 @@ const mainMenuTemplate =  [
         
         click(){
           mainWindow.webContents = mainWindow.loadURL(url.format({
-            pathname: path.join(__dirname, 'views/login.html'),
+            pathname: path.join(__dirname, 'views/index.html'),
             protocol: 'file:',
             slashes:true
           }));
         }
       },
+     
       {
-        label:'Stores',
-        
-        click(){
-          createAddWindow('store')
-        }
-      },
-      {
-        label:'Settings',
+        label:'Help',
         click(){
           createAddWindow('settings')
         }
@@ -207,163 +212,163 @@ const mainMenuTemplate =  [
  
 // const views = ['product','category','order','sales','user','message'];
 
-  {
-    label: 'New',
-    submenu:[
-      {
-        label:'product',
+  // {
+  //   label: 'New',
+  //   submenu:[
+  //     {
+  //       label:'product',
         
-        click(){
-          popup('product','add');
-        }
-      }
-      ,
+  //       click(){
+  //         popup('product','add');
+  //       }
+  //     }
+  //     ,
       
-      {
-        label:'sale',
+  //     {
+  //       label:'sale',
         
-        click(){
-          popup('sales','add');
-        }
-      },
-      {
-        label:'user',
+  //       click(){
+  //         popup('sales','add');
+  //       }
+  //     },
+  //     {
+  //       label:'user',
         
-        click(){
-          register();
-        }
-      },
-    ]
-  },
+  //       click(){
+  //         register();
+  //       }
+  //     },
+  //   ]
+  // },
 
 
-  {
-    label: 'Edit',
-    submenu:[
-      {
-        label:'product',
+  // {
+  //   label: 'Edit',
+  //   submenu:[
+  //     {
+  //       label:'product',
         
-        click(){
-          popup('product','edit');
-        }
-      },
-      {
-        label:'category',
+  //       click(){
+  //         popup('product','edit');
+  //       }
+  //     },
+  //     {
+  //       label:'category',
         
-        click(){
-          popup('category','edit');
-        }
-      },
-      {
-        label:'order',
+  //       click(){
+  //         popup('category','edit');
+  //       }
+  //     },
+  //     {
+  //       label:'order',
         
-        click(){
-          popup('order','edit');
-        }
-      },
-      {
-        label:'sales',
+  //       click(){
+  //         popup('order','edit');
+  //       }
+  //     },
+  //     {
+  //       label:'sales',
         
-        click(){
-          popup('sales','edit');
-        }
-      },
-      {
-        label:'user',
+  //       click(){
+  //         popup('sales','edit');
+  //       }
+  //     },
+  //     {
+  //       label:'user',
         
-        click(){
-          popup('user','edit');
-        }
-      },
-    ]
-  },
+  //       click(){
+  //         popup('user','edit');
+  //       }
+  //     },
+  //   ]
+  // },
 
 
-  {
-    label: 'Delete',
-    submenu:[
-      {
-        label:'product',
+  // {
+  //   label: 'Delete',
+  //   submenu:[
+  //     {
+  //       label:'product',
         
-        click(){
-          popup('product','delete');
-        }
-      },
-      {
-        label:'category',
+  //       click(){
+  //         popup('product','delete');
+  //       }
+  //     },
+  //     {
+  //       label:'category',
         
-        click(){
-          popup('category','delete');
-        }
-      },
-      {
-        label:'order',
+  //       click(){
+  //         popup('category','delete');
+  //       }
+  //     },
+  //     {
+  //       label:'order',
         
-        click(){
-          popup('order','delete');
-        }
-      },
-      {
-        label:'sales',
+  //       click(){
+  //         popup('order','delete');
+  //       }
+  //     },
+  //     {
+  //       label:'sales',
         
-        click(){
-          popup('sales','delete');
-        }
-      },
-      {
-        label:'user',
+  //       click(){
+  //         popup('sales','delete');
+  //       }
+  //     },
+  //     {
+  //       label:'user',
         
-        click(){
-          popup('user','delete');
-        }
-      },
-    ]
-  },
+  //       click(){
+  //         popup('user','delete');
+  //       }
+  //     },
+  //   ]
+  // },
 
-  {
-    label: 'View',
-    submenu:[
-      {
-        label:'product',
+  // {
+  //   label: 'View',
+  //   submenu:[
+  //     {
+  //       label:'product',
         
-        click(){
-          popup('product','view');
-        }
-      },
-      {
-        label:'category',
+  //       click(){
+  //         popup('product','view');
+  //       }
+  //     },
+  //     {
+  //       label:'category',
         
-        click(){
-          popup('category','view');
-        }
-      },
-      {
-        label:'order',
+  //       click(){
+  //         popup('category','view');
+  //       }
+  //     },
+  //     {
+  //       label:'order',
         
-        click(){
-          popup('order','view');
-        }
-      },
-      {
-        label:'sales',
+  //       click(){
+  //         popup('order','view');
+  //       }
+  //     },
+  //     {
+  //       label:'sales',
         
-        click(){
-          popup('sales','view');
-        }
-      },
-      {
-        label:'user',
+  //       click(){
+  //         popup('sales','view');
+  //       }
+  //     },
+  //     {
+  //       label:'user',
         
-        click(){
-          popup('user','view');
-        }
-      },
-    ]
-  },
+  //       click(){
+  //         popup('user','view');
+  //       }
+  //     },
+  //   ]
+  // },
 
-  {
-    label: 'Help'
-  }
+  // {
+  //   label: 'Help'
+  // }
 ];
 
 
