@@ -25,11 +25,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="navbar.js"></script>
 </head>
 <body class="hold-transition sidebar-mini"  >
-  <aside class="main-sidebar navnav sidebar-dark-primary elevation-4" id="navnav">
-   
-  </aside>
-
-<div class="wrapper">
+  
+  <div class="wrapper">
+    <aside class="main-sidebar navnav sidebar-dark-primary elevation-4" id="navnav">
+     
+    </aside>
 
     
   <!-- /.navbar -->
@@ -47,67 +47,144 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="card-body">
         <h6 class="card-title"></h6>
        <div class="form-group">
-        <input type="text" name="" id="" class="form-control col-12 rounded-3">
-        
+          
        </div>
-               <a href="#" class="btn btn-primary">Search</a>
+        
       </div>
+      <div class="row" id="weekly">
+      </div>
+      <hr>
 
       <div class="row">
         <div class="col-12">
           <div class="card bg-default">
             <div class="card-header bg-default">
-              <h3 class="card-title">Reports</h3>
+              <h3 class="card-title">Weekly</h3>
   
               <div class="card-tools bg-default">
                 <div class="input-group input-group-sm" style="width: 150px;">
-                  <input type="text" name="table_search" class="form-control float-right" placeholder="Search">
   
                   <div class="input-group-append">
-                    <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
                   </div>
                 </div>
               </div>
             </div>
             <!-- /.card-header -->
-            <div class="card-body table-responsive p-0">
-              <table class="table table-hover text-nowrap">
-                <thead>
-                  <tr>
-                    <th>ID</th>
-                    <th>Time</th>
-                    <th>Category</th>
-                    <th>Action</th>
+            
+            <div class="card-body table-responsive p-0" >
+              <div class="invoice p-3 mb-3">
+                <!-- title row -->
+                <div class="row">
+                  <div class="col-12">
+                    <h4>
+                      <i class="fa fa-houzz nav-icon" aria-hidden="true"></i> Inventory
+                      <small class="float-right">Date: 2/10/2014</small>
+                    </h4>
+                  </div>
+                  <!-- /.col -->
+                </div>
+                <!-- info row -->
+                <div class="row invoice-info">
+                  <div class="col-sm-4 invoice-col">
+                    From Date: 2/10/2014
+                    <address>
+                      <strong>Inventory</strong><br>
+                      Sales Records<br>
+                      Products Added<br>
+                      Orders Issued<br>
                     
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>183</td>
-                    <td>Annual</td>
-                    <td>Products</td>
-                    <td><span class="tag tag-success">Extract</span></td>
-                  </tr>
-                  <tr>
-                    <td>219</td>
-                    <td>Weekly</td>
-                    <td>Sales</td>
-                    <td><span class="tag tag-warning btn-small">Extract</span></td>
-                  </tr>
-                  <tr>
-                    <td>657</td>
-                    <td>Monthly</td>
-                    <td>Sales</td>
-                    <td><span class="tag tag-success">Extract</span></td>
-                  </tr>
-                  <tr>
-                    <td>175</td>
-                    <td>Weekly</td>
-                    <td>Products</td>
-                    <td><span class="tag tag-success">Extract</span></td>
-                  </tr>
-                </tbody>
-              </table>
+                    </address>
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-sm-4 invoice-col">
+                    To Date: 2/10/2014
+                    <address>
+                      <strong>Inventory</strong><br>
+                      Sales Records<br>
+                      Products Added<br>
+                      Orders Issued<br>
+                    </address>
+                  </div>
+                  <!-- /.col -->
+                 
+                  <!-- /.col -->
+                </div>
+                <!-- /.row -->
+  
+                <!-- Table row -->
+                <div class="row">
+                  <div class="col-12 table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                      <tr>
+                        <th></th>
+                        <th>Record Type</th>
+                        <th>No Records</th>
+                      
+                        <th>Value in Money</th>
+                      </tr>
+                      </thead>
+                      <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>Sales</td>
+                        <td>34</td>
+                        <td>$64.50</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>Products</td>
+                        <td>24</td>
+                        <td>$50.00</td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Orders</td>
+                        <td>7</td>
+                        <td>$10.70</td>
+                      </tr>
+                     
+                      </tbody>
+                    </table>
+                  </div>
+                  <!-- /.col -->
+                </div>
+                <!-- /.row -->
+  
+                <div class="row">
+                 
+                  <!-- /.col -->
+                  <div class="col-6">
+                    <p class="lead">Inventory Current Status</p>
+  
+                    <div class="table-responsive">
+                      <table class="table">
+                        <tbody>
+                        <tr>
+                          <th>Total Products Remained:</th>
+                          <td>$10.34</td>
+                        </tr>
+                        <tr>
+                          <th>Total Price in Stock:</th>
+                          <td>$5.80</td>
+                        </tr>
+                       
+                      </tbody></table>
+                    </div>
+                  </div>
+                  <!-- /.col -->
+                </div>
+                <!-- /.row -->
+  
+                <!-- this row will not appear when printing -->
+                <div class="row no-print">
+                  <div class="col-12">
+                    <a href="inventory.html" target="_blank" class="btn btn-default  float-right"><i class="fas fa-print"></i> Print Report</a>
+                    
+                  </div>
+                </div>
+              </div>
+
             </div>
             <!-- /.card-body -->
           </div>
@@ -121,10 +198,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
 </div>
+
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
-<script src="dist/js/adminlte.min.js"></script>
+<script src="Handlers/reports.js"></script>
 </body>
 </html>

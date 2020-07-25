@@ -88,7 +88,7 @@ const Nav = () => {
             <ul class="nav nav-treeview">
             <li class="nav-item">
                 <a href="inventory.html" class="nav-link">
-                  <i class="far fa-product-hunt nav-icon"></i>
+                <i class="fa fa-houzz nav-icon" aria-hidden="true"></i>
                   <p>Inventory</p>
                 </a>
               </li>
@@ -121,6 +121,12 @@ const Nav = () => {
                 <a href="categories.html" class="nav-link">
                   <i class="far fa-list-alt nav-icon"></i>
                   <p>Categories</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="reports.html" class="nav-link">
+                <i class="fa fa-file nav-icon" aria-hidden="true"></i>
+                  <p>Reports</p>
                 </a>
               </li>
               
