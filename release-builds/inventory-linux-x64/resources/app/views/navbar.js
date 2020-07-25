@@ -1,3 +1,5 @@
+const { ipcRenderer } = require("electron");
+
 //dashboard
 var recentsalesTable = document.getElementById('recentsales');
 var recentproductsTable = document.getElementById('recentproducts');
@@ -22,7 +24,18 @@ var usersTable = document.getElementById('users');
 //report
 var reportTable = document.getElementById('report');
 
+ipcRenderer.on('product:created', function(e, item){
+  // ul.className = 'collection';
+  // const li = document.createElement('li');
+  // li.className = 'collection-item';
+  // const itemText = document.createTextNode(item);
 
+  // li.appendChild(itemText);
+  // ul.appendChild(li);
+
+  console.log('Product created');
+  
+});
 
 window.onload = (e) => { 
 
@@ -44,12 +57,12 @@ const Nav = () => {
 
           const navbar = `
     <!-- Brand Logo -->
-    <a href="index.html" class="brand-link">
-      
-      <span class="brand-text font-weight-light">InventoryApp</span><br/>
-      <small class="brand-text font-weight-light">${loggedInUser.firstName}, ${loggedInUser.type}</small>
-
-    </a>
+    <a class="nav-link text-light text-bold">
+          
+          <span class="card-header">InventoryApp</span><br/>
+          <span class="brand-text font-weight-light">${loggedInUser.firstName}, ${loggedInUser.type}</span>
+    
+        </a>
 
     <!-- Sidebar -->
     <div class="sidebar">
@@ -63,7 +76,7 @@ const Nav = () => {
                with font-awesome or any other icon font library -->
           <li class="nav-item has-treeview menu-open">
             <a href="dashboard.html" class="nav-link">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <i class="nav-icon fas fa-gear"></i>
               <p>
                 Dashboard
                 <i class="right fas fa-angle-left"></i>
@@ -72,46 +85,41 @@ const Nav = () => {
             <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="products.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-product-hunt nav-icon"></i>
                   <p>Product</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="orders.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-first-order nav-icon"></i>
                   <p>Orders</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="users.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-users nav-icon"></i>
                   <p>Users</p>
                 </a>
               </li>
              
               <li class="nav-item">
                 <a href="sales.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-shopping-cart nav-icon"></i>
                   <p>Sales</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="categories.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
+                  <i class="far fa-list-alt nav-icon"></i>
                   <p>Categories</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="reports.html" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Report</p>
-                </a>
-              </li>
+              
             </ul>
           </li>
           <li class="nav-item">
             <a href="login.html" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
+              <i class="fas fa-sign-out-alt"></i>
               <p>
                 Log Out
                 
@@ -145,13 +153,12 @@ const Nav = () => {
 
         const navbar = `
         <!-- Brand Logo -->
-        <a href="index.html" class="brand-link">
+        <a class="nav-link text-light text-bold">
           
-          <span class="brand-text font-weight-light">InventoryApp</span> <br/>
-          <small class="brand-text font-weight-light">${loggedInUser.firstName}, ${loggedInUser.type}</small>
-
-        </a>
+          <span class="card-header">InventoryApp</span><br/>
+          <span class="brand-text font-weight-light">${loggedInUser.firstName}, ${loggedInUser.type}</span>
     
+        </a>
         <!-- Sidebar -->
         <div class="sidebar">
           <!-- Sidebar user panel (optional) -->
@@ -164,55 +171,33 @@ const Nav = () => {
                    with font-awesome or any other icon font library -->
               <li class="nav-item has-treeview menu-open">
                 <a href="dashboard.html" class="nav-link">
-                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <i class="nav-icon "></i>
                   <p>
                     Dashboard
                     <i class="right fas fa-angle-left"></i>
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="products.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Product</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="orders.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Orders</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="users.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Users</p>
-                    </a>
-                  </li>
+               
+              <li class="nav-item">
+                <a href="orders.html" class="nav-link">
+                  <i class="far fa-first-order nav-icon"></i>
+                  <p>Orders</p>
+                </a>
+              </li>
+                
                  
-                  <li class="nav-item">
-                    <a href="sales.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Sales</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="categories.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Categories</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="reports.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Report</p>
-                    </a>
-                  </li>
+              <li class="nav-item">
+              <a href="sales.html" class="nav-link">
+                <i class="far fa-shopping-cart nav-icon"></i>
+                <p>Sales</p>
+              </a>
+            </li>
                 </ul>
               </li>
               <li class="nav-item">
                 <a href="login.html" class="nav-link">
-                  <i class="nav-icon fas fa-th"></i>
+                  <i class="fas fa-sign-out-alt"></i>
                   <p>
                     Log Out
                     
@@ -244,11 +229,11 @@ const Nav = () => {
 
         const navbar = `
         <!-- Brand Logo -->
-        <a href="index.html" class="brand-link">
+        <a class="nav-link text-light text-bold">
           
-          <span class="brand-text font-weight-light">InventoryApp</span> <br/>
-          <small class="brand-text font-weight-light">${loggedInUser.firstName}, ${loggedInUser.type}</small>
-          
+          <span class="card-header">InventoryApp</span><br/>
+          <span class="brand-text font-weight-light">${loggedInUser.firstName}, ${loggedInUser.type}</span>
+    
         </a>
     
         <!-- Sidebar -->
@@ -263,7 +248,7 @@ const Nav = () => {
                    with font-awesome or any other icon font library -->
               <li class="nav-item has-treeview menu-open">
                 <a href="dashboard.html" class="nav-link">
-                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <i class="nav-icon fas fa-gear"></i>
                   <p>
                     Dashboard
                     <i class="right fas fa-angle-left"></i>
@@ -272,36 +257,23 @@ const Nav = () => {
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
                     <a href="products.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
+                      <i class="far fa-product-hunt nav-icon"></i>
                       <p>Product</p>
                     </a>
                   </li>
-                  <li class="nav-item">
-                    <a href="orders.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Orders</p>
-                    </a>
-                  </li>
                 
-                 
-                  <li class="nav-item">
-                    <a href="sales.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
-                      <p>Sales</p>
-                    </a>
-                  </li>
                   <li class="nav-item">
                     <a href="categories.html" class="nav-link">
-                      <i class="far fa-circle nav-icon"></i>
+                      <i class="far fa-list-alt nav-icon"></i>
                       <p>Categories</p>
                     </a>
                   </li>
-                 
+                  
                 </ul>
               </li>
               <li class="nav-item">
                 <a href="login.html" class="nav-link">
-                  <i class="nav-icon fas fa-th"></i>
+                  <i class="fas fa-sign-out-alt nav-icon"></i>
                   <p>
                     Log Out
                     
@@ -819,6 +791,9 @@ console.log("worked");
     getProducts();
     getSales();
     getUsers();
+
+
+
     return false;
 }
 

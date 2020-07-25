@@ -68,6 +68,7 @@ fetch('http://localhost:3000/api/products')
       console.log("not present")
       postData('http://localhost:3000/api/products',newProduct)
       .then(data => {
+        ipcRenderer.send('product:created', newProduct);
         alert(`Product Created`);
       })
       .catch(err => {
@@ -129,6 +130,8 @@ async function putData(url = '', data = {}) {
   });
   return response.json(); // parses JSON response into native JavaScript objects
 }
+
+
 
 return (false);
 }

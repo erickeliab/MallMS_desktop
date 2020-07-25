@@ -24,6 +24,9 @@ var usersTable = document.getElementById('users');
 //report
 var reportTable = document.getElementById('report');
 
+//inventory
+var inventoryTable = document.getElementById('inventory');
+
 ipcRenderer.on('product:created', function(e, item){
   // ul.className = 'collection';
   // const li = document.createElement('li');
@@ -83,6 +86,12 @@ const Nav = () => {
               </p>
             </a>
             <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="inventory.html" class="nav-link">
+                  <i class="far fa-product-hunt nav-icon"></i>
+                  <p>Inventory</p>
+                </a>
+              </li>
               <li class="nav-item">
                 <a href="products.html" class="nav-link">
                   <i class="far fa-product-hunt nav-icon"></i>
@@ -776,6 +785,70 @@ console.log("worked");
     }
 
 
+    //get inventory records
+    const getInventories = () =>  {
+      //fetch the products
+
+
+      fetch('http://localhost:3000/api/products')
+    .then(response => response.json())
+    .then(products => {
+     // console.log(products);
+
+      products.forEach(product => {
+        
+     
+
+        fetch(`http://localhost:3000/api/inventories/${product.id}`)
+    .then(response => response.json())
+    .then(inventories => {
+
+       
+      var tr = document.createElement('tr');
+      var initial =  document.createElement('td');
+      var name = document.createElement('td');
+      var price = document.createElement('td');
+      var quantity = document.createElement('td');
+      var total = document.createElement('td');
+      var supplier = document.createElement('td');
+      var date = document.createElement('td');
+
+     var dt = new Date(inventories.updatedAt)
+     var d = dt.toDateString()
+     
+      // set value property of tds
+      name.appendChild( document.createTextNode(product.name));
+      price.appendChild( document.createTextNode(`${product.price}/=`));
+      quantity.appendChild( document.createTextNode(inventories.quantity));
+      total.appendChild( document.createTextNode(`${inventories.TotalPrice}/=`));
+      date.appendChild( document.createTextNode(d));
+      
+      tr.appendChild(initial);
+      tr.appendChild(name);
+      tr.appendChild(quantity);
+      tr.appendChild(price);
+      tr.appendChild(total);
+      tr.appendChild(date);
+
+    
+      // add tr to table (sel)
+      if (inventoryTable) {
+
+        inventoryTable.appendChild(tr); 
+      }
+      
+    
+    });  
+
+       
+    
+     
+  })
+              
+    })
+    .then(err => console.log(err))
+  }
+
 
     //calling navigation bar function
     Nav();
@@ -791,6 +864,7 @@ console.log("worked");
     getProducts();
     getSales();
     getUsers();
+    getInventories();
 
 
 
