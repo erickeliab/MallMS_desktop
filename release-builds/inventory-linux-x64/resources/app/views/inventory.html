@@ -22,65 +22,68 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="custom_style/mmain.css">
   <link rel="stylesheet" href="custom_style/custom.css">
 
-
+  
 </head>
 <body class="hold-transition sidebar-mini"  >
-  <div class="wrapper">
+ 
+<div class="wrapper">
 
-    <aside class="main-sidebar navnav sidebar-dark-primary elevation-4" id="navnav">
-     
-    </aside>
+  <aside class="main-sidebar navnav sidebar-dark-primary elevation-4" id="navnav">
+   
+  </aside>
+
+
+
+
+ 
   <div class="content-wrapper">
-   
-   
-    
-    
-      <!-- /.navbar -->
-    
-      <!-- Main Sidebar Container -->
-      <!-- this sidebar is loading the links to different pages -->
-    
+
     <div class="bg-default col-12">
       <div class="card-header">
-        <h3 class="card-title m-0">Orders</h3>
+        <h2 class="card-title m-0">Inventory</h2>
       </div>
       <div class="card-body">
         <h6 class="card-title"></h6>
        <div class="form-group">
+        <a href="addProducts.html" class="btn btn-primary">Add Products</a>
         
        </div>
-               <a href="addSale.html" class="btn btn-primary">New Order</a>
       </div>
+
+      
+
 
       <div class="row">
         <div class="col-12">
-          <div class="card bg-success">
+          <div class="card bg-default">
             <div class="card-header bg-default">
-              <h3 class="card-title">Orders</h3>
+              <h3 class="card-title"> Inventory records</h3>
   
               <div class="card-tools bg-default">
                 <div class="input-group input-group-sm" style="width: 150px;">
-                  
+  
+                  <div class="input-group-append">
+                  </div>
                 </div>
               </div>
             </div>
             <!-- /.card-header -->
             <div class="card-body table-responsive p-0">
               <table class="table table-hover text-nowrap">
-                
-                  <thead>
-                    <tr>
-                      <th></th>
-                      <th>OrderNumber</th>
-                      <th>No Products</th>
-                      <th>Total Amount</th>
-                      <th>Date</th>
-                    </tr>
-                  </thead>
-                  <tbody id="orders">
-                    
-                   
-                  </tbody>
+                <thead>
+                  <tr>
+                    <th></th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price for each</th>
+                    <th>Total Price</th>
+                    <th>Updated</th>
+                  </tr>
+                </thead>
+                <tbody id="inventory">
+                 
+                 
+                </tbody>
               </table>
             </div>
             <!-- /.card-body -->
@@ -91,15 +94,25 @@ scratch. This page gets rid of all links and provides the needed markup only.
     </div>
     
   </div>
-
-
+    
+  </div>
 
 </div>
+
+</div>
+<!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
+<script src="dist/js/adminlte.min.js"></script>
+
+<script src="Handlers/viewdashboard.js"></script>
+
 <script src="navbar.js"></script>
 </body>
 </html>

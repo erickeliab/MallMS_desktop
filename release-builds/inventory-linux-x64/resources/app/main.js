@@ -194,12 +194,12 @@ const mainMenuTemplate =  [
         }
       },
      
-      {
-        label:'Help',
-        click(){
-          createAddWindow('settings')
-        }
-      },
+      // {
+      //   label:'Help',
+      //   click(){
+      //     createAddWindow('settings')
+      //   }
+      // },
       {
         label: 'Quit',
         accelerator:process.platform == 'darwin' ? 'Command+Q' : 'Ctrl+Q',
@@ -408,7 +408,7 @@ if(process.platform == 'darwin'){
 // });
 
 // Add developer tools option if in dev
-if(process.env.NODE_ENV !== 'production'){
+if(process.env.NODE_ENV == 'productio'){
   mainMenuTemplate.push({
     label: 'Developer Tools',
     submenu:[
