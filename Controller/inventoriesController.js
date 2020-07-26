@@ -4,7 +4,7 @@ const model = require('../models/index');
 
 
 router.get('/', (req,res) => {
-    model.Inventory.findAll({include: [model.Product] })
+    model.Inventory.findAll()
     .then(data => res.send(data))
     .catch(err => console.log(err));
 })
