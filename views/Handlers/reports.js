@@ -158,7 +158,7 @@ window.onload = (e) => {
                             <tr>
                               <td>2</td>
                               <td>Products</td>
-                              <td>${weekorders.length}</td>
+                              <td>${weekproducts.length}</td>
                               <td>${totalweekProductPrice} Tsh</td>
                             </tr>
                             <tr>
@@ -382,7 +382,7 @@ window.onload = (e) => {
                           <tr>
                             <td>2</td>
                             <td>Products</td>
-                            <td>${weekorders.length}</td>
+                            <td>${weekproducts.length}</td>
                             <td>${totalweekProductPrice} Tsh</td>
                           </tr>
                           <tr>
