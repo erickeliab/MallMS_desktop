@@ -1,3 +1,4 @@
+
 window.onload = (e) => { 
 
 
@@ -82,7 +83,7 @@ window.onload = (e) => {
               <div class="col-12">
                 <div class="card bg-default">
                   <div class="card-header bg-default">
-                    <h3 class="card-title">Weekly</h3>
+                    <h3 class="card-title">Monthly</h3>
         
                     <div class="card-tools bg-default">
                       <div class="input-group input-group-sm" style="width: 150px;">
@@ -201,6 +202,7 @@ window.onload = (e) => {
         
                       <!-- this row will not appear when printing -->
                       
+                      <button class="btn btn-lg btn-default" onclick="window.print()">Print</button>
                     </div>
       
                   </div>
@@ -305,7 +307,7 @@ window.onload = (e) => {
             <div class="col-12">
               <div class="card bg-default">
                 <div class="card-header bg-default">
-                  <h3 class="card-title">Monthly</h3>
+                  <h3 class="card-title">Weekly</h3>
       
                   <div class="card-tools bg-default">
                     <div class="input-group input-group-sm" style="width: 150px;">
@@ -423,7 +425,8 @@ window.onload = (e) => {
                     <!-- /.row -->
       
                     <!-- this row will not appear when printing -->
-                    
+                    <button class="btn btn-lg btn-default" onclick="window.print()">Print</button>
+
                   </div>
     
                 </div>
@@ -434,11 +437,11 @@ window.onload = (e) => {
           </div>`;
 
           weeklyReportHolder.insertAdjacentHTML( 'beforeend', report );
-
+          //window.print();
+        })
+      })
     })
-    })
-    })
-    })
+  })
       
 
 
@@ -449,5 +452,5 @@ window.onload = (e) => {
 
     Monthly();
     Weekly();
-    window.print();
+
 }

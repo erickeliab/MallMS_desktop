@@ -19,6 +19,8 @@
     "esm": "^3.2.25",
     "express": "^4.17.1",
     "mysql2": "^2.1.0",
+    "print-js": "^1.0.63",
+    "printd": "^1.4.2",
     "sequelize": "^5.21.13"
   },
   "devDependencies": {

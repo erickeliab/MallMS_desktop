@@ -543,6 +543,7 @@ console.log("worked");
           // set value property of tds
           
           var date = document.createElement('td');
+          name.appendChild( document.createTextNode(product.name));
           price.appendChild( document.createTextNode(product.price));
           category.appendChild( document.createTextNode(product.Category.Type));
           supplier.appendChild( document.createTextNode(product.Supplier.Name));
